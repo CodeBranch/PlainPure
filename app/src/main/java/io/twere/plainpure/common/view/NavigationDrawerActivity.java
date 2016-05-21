@@ -1,11 +1,11 @@
-package io.twere.plainpure.common;
+package io.twere.plainpure.common.view;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.LayoutRes;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,7 +17,7 @@ import butterknife.BindDimen;
 import com.bumptech.glide.Glide;
 import io.twere.plainpure.R;
 
-public abstract class NavigationDrawerActivity extends HomeActivity {
+public abstract class NavigationDrawerActivity extends BaseActivity {
 
   @Bind(R.id.drawerLayout) DrawerLayout drawerLayout;
   @Bind(R.id.vNavigation) NavigationView vNavigation;
@@ -44,7 +44,7 @@ public abstract class NavigationDrawerActivity extends HomeActivity {
     if (getToolbar() != null) {
       getToolbar().setNavigationOnClickListener(new View.OnClickListener() {
         @Override public void onClick(View v) {
-          drawerLayout.openDrawer(Gravity.LEFT);
+          drawerLayout.openDrawer(GravityCompat.START);
         }
       });
     }
@@ -53,30 +53,45 @@ public abstract class NavigationDrawerActivity extends HomeActivity {
   private void setupItems() {
     Menu menu = vNavigation.getMenu();
 
+    menu.getItem(0).setChecked(true);
+    if(getToolbar()!=null)
+      getToolbar().setTitle(menu.getItem(0).getTitle());
+
     menu.getItem(0).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
       @Override public boolean onMenuItemClick(MenuItem menuItem) {
-        drawerLayout.closeDrawer(Gravity.LEFT);
+        drawerLayout.closeDrawer(GravityCompat.START);
         menuItem.setChecked(true);
+        onDrawerMenuClick(menuItem);
+        if(getToolbar()!=null)
+        getToolbar().setTitle(menuItem.getTitle());
         return false;
       }
     });
 
     menu.getItem(1).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
       @Override public boolean onMenuItemClick(MenuItem menuItem) {
-        drawerLayout.closeDrawer(Gravity.LEFT);
+        drawerLayout.closeDrawer(GravityCompat.START);
         menuItem.setChecked(true);
+        onDrawerMenuClick(menuItem);
+        if(getToolbar()!=null)
+          getToolbar().setTitle(menuItem.getTitle());
         return false;
       }
     });
 
     menu.getItem(2).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
       @Override public boolean onMenuItemClick(MenuItem menuItem) {
-        drawerLayout.closeDrawer(Gravity.LEFT);
+        drawerLayout.closeDrawer(GravityCompat.START);
         menuItem.setChecked(true);
+        onDrawerMenuClick(menuItem);
+        if(getToolbar()!=null)
+          getToolbar().setTitle(menuItem.getTitle());
         return false;
       }
     });
   }
+
+  protected abstract void onDrawerMenuClick(MenuItem menuItem);
 
   private void setupHeader() {
 
@@ -89,16 +104,15 @@ public abstract class NavigationDrawerActivity extends HomeActivity {
     });
 
     Glide.with(this)
-        .load(
-            "http://umdb.org.ua/images/imgs/__local10001/impsize/1243004483291.jpg")
+        .load("http://umdb.org.ua/images/imgs/__local10001/impsize/1243004483291.jpg")
         .placeholder(R.drawable.img_circle_placeholder)
         .override(avatarSize, avatarSize)
         .centerCrop()
         .into(ivMenuUserProfilePhoto);
   }
 
-  public void onGlobalMenuHeaderClick(final View v) {
-    drawerLayout.closeDrawer(Gravity.LEFT);
+  private void onGlobalMenuHeaderClick(final View v) {
+    drawerLayout.closeDrawer(GravityCompat.START);
     new Handler().postDelayed(new Runnable() {
       @Override public void run() {
         int[] startingLocation = new int[2];

@@ -1,13 +1,13 @@
-package io.twere.plainpure.common;
+package io.twere.plainpure.common.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import icepick.Icepick;
 import io.twere.plainpure.PlainPureApplication;
 import io.twere.plainpure.R;
 import io.twere.plainpure.injection.components.ActivityComponent;
@@ -16,7 +16,7 @@ import io.twere.plainpure.injection.components.DaggerActivityComponent;
 import io.twere.plainpure.injection.modules.ActivityModule;
 import io.twere.plainpure.injection.modules.ApiModule;
 
-public abstract class HomeActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
   @Nullable @Bind(R.id.toolbar) Toolbar toolbar;
 
@@ -24,8 +24,19 @@ public abstract class HomeActivity extends AppCompatActivity {
   private MenuItem inboxMenuItem;
 
   @Override public void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
     this.getApplicationComponent().inject(this);
+    super.onCreate(savedInstanceState);
+    Icepick.restoreInstanceState(this, savedInstanceState);
+  }
+
+  @Override public void onContentChanged() {
+    super.onContentChanged();
+    ButterKnife.bind(this);
+  }
+
+  @Override public void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+    Icepick.saveInstanceState(this, outState);
   }
 
   @Override public void setContentView(int layoutResID) {
@@ -33,19 +44,18 @@ public abstract class HomeActivity extends AppCompatActivity {
     bindViews();
   }
 
-  @Override public boolean onCreateOptionsMenu(Menu menu) {
+/*  @Override public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.menu_main, menu);
     inboxMenuItem = menu.findItem(R.id.action_inbox);
     inboxMenuItem.setActionView(R.layout.menu_item_view);
     return true;
-  }
-
+  }*/
 
   @Nullable public Toolbar getToolbar() {
     return toolbar;
   }
 
-  protected void bindViews() {
+  void bindViews() {
     ButterKnife.bind(this);
     setupToolbar();
   }
@@ -57,15 +67,15 @@ public abstract class HomeActivity extends AppCompatActivity {
     }
   }
 
-  public void setContentViewWithoutInject(int layoutResId) {
+  void setContentViewWithoutInject(int layoutResId) {
     super.setContentView(layoutResId);
   }
 
-  protected ApplicationComponent getApplicationComponent() {
+  private ApplicationComponent getApplicationComponent() {
     return PlainPureApplication.getApplicationComponent();
   }
 
-  public ActivityComponent getActivityComponent() {
+  ActivityComponent getActivityComponent() {
     if (mActivityComponent == null) {
       mActivityComponent = DaggerActivityComponent.builder()
           .applicationComponent(PlainPureApplication.getApplicationComponent())

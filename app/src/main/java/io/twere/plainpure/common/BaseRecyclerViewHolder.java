@@ -1,4 +1,4 @@
-package io.twere.plainpure.ui.viewholder;
+package io.twere.plainpure.common;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
