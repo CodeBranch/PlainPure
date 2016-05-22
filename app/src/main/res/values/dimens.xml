@@ -14,4 +14,5 @@
   <dimen name="avatar_padding">4dp</dimen>
   <dimen name="avatar_size">40dp</dimen>
   <dimen name="avatar_ripple_radius">20dp</dimen>
+  <dimen name="user_profile_avatar_size">88dp</dimen>
 </resources>
