@@ -6,6 +6,7 @@ import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import io.fabric.sdk.android.Fabric;
 import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import io.twere.plainpure.injection.components.ApplicationComponent;
 import io.twere.plainpure.injection.components.DaggerApplicationComponent;
 import io.twere.plainpure.injection.modules.ApplicationModule;
@@ -21,6 +22,8 @@ public class PlainPureApplication extends Application {
     sInstance = this;
     initializeCrashlytics();
     initializeInjector();
+    RealmConfiguration realmConfiguration = new RealmConfiguration.Builder(this).build();
+    Realm.setDefaultConfiguration(realmConfiguration);
   }
 
   private void initializeCrashlytics() {

@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 apply plugin: 'io.fabric'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 //apply plugin: 'com.google.gms.google-services'
 
 repositories {
@@ -9,7 +10,7 @@ repositories {
   mavenCentral()
   maven { url 'https://maven.fabric.io/public' }
   maven { url "https://jitpack.io" }
-  maven {url "https://clojars.org/repo/"}
+  maven { url "https://clojars.org/repo/" }
 }
 
 android {
@@ -34,10 +35,10 @@ android {
     }
   }
 
-//  compileOptions {
-//    sourceCompatibility JavaVersion.VERSION_1_8
-//    targetCompatibility JavaVersion.VERSION_1_8
-//  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 
   packagingOptions {
     exclude 'LICENSE.txt'
@@ -104,13 +105,12 @@ dependencies {
   compile(app.crashlytics) {
     transitive = true;
   }
-
+  //MVP
+  compile app.mosby
+  compile app.mosbyViewstate
   //Other
-  compile'com.github.Alelak:materialup:1.1.3'
-  compile 'com.hannesdorfmann.mosby:mvp:2.0.1'
-  compile 'com.hannesdorfmann.mosby:viewstate:2.0.1' // optional viewstate feature
-  compile 'frankiesardo:icepick:3.2.0'
-  provided 'frankiesardo:icepick-processor:3.2.0'
+  compile app.icepick
+  provided app.icepickProcessor
 
   //Testing
   androidTestCompile appTest.junit

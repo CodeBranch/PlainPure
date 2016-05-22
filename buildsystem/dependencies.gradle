@@ -30,6 +30,10 @@ ext {
   glideVersion = '3.7.0'
   //Services
   crashlyticsVersion = '2.5.5@aar'
+  //MVP
+  mosbyVersion = '2.0.1'
+  //Other
+  icepickVersion = '3.2.0'
   //Testing
   robolectricVersion = '3.0'
   jUnitVersion = '4.12'
@@ -63,12 +67,18 @@ ext {
       retrofitConverterGson: "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
       retrofitRxAdapter    : "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}",
       okHttp               : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
-      okhttpLogging    : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+      okhttpLogging        : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
       gson                 : "com.google.code.gson:gson:${gsonVersion}",
       //Cache
       glide                : "com.github.bumptech.glide:glide:${glideVersion}",
       //Services
       crashlytics          : "com.crashlytics.sdk.android:crashlytics:${crashlyticsVersion}",
+      //MVP
+      mosby                : "com.hannesdorfmann.mosby:mvp:${mosbyVersion}",
+      mosbyViewstate       : "com.hannesdorfmann.mosby:viewstate:${mosbyVersion}",
+      //Other
+      icepick              : "frankiesardo:icepick:${icepickVersion}",
+      icepickProcessor     : "frankiesardo:icepick-processor:${icepickVersion}",
   ]
 
   appTestDependencies = [

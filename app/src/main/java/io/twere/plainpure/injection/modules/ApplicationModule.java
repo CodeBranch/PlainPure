@@ -2,6 +2,7 @@ package io.twere.plainpure.injection.modules;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.Resources;
 import dagger.Module;
 import dagger.Provides;
 import io.realm.Realm;
@@ -33,5 +34,9 @@ import io.twere.plainpure.injection.scopes.PerApplication;
 
   @Provides static Realm provideRealm(RealmConfiguration realmConfiguration) {
     return Realm.getInstance(realmConfiguration);
+  }
+
+  @Provides @PerApplication Resources provideResources(Context context) {
+    return context.getResources();
   }
 }
