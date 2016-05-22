@@ -8,7 +8,7 @@ import dagger.Provides;
 import io.twere.plainpure.injection.qualifier.ActivityContext;
 import io.twere.plainpure.injection.scopes.PerFragment;
 
-@Module public class FragmentModule {
+@Module public final class FragmentModule {
 
   private final Fragment mFragment;
 

@@ -10,7 +10,7 @@ import io.twere.plainpure.BuildConfig;
 import io.twere.plainpure.injection.qualifier.ApplicationContext;
 import io.twere.plainpure.injection.scopes.PerApplication;
 
-@Module public class ApplicationModule {
+@Module public final class ApplicationModule {
 
   private final Application mApplication;
 

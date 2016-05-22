@@ -1,12 +1,12 @@
 package io.twere.plainpure.data.api.dribbble;
 
-import io.twere.plainpure.mvp.model.dribbble.Attachment;
-import io.twere.plainpure.mvp.model.dribbble.Bucket;
-import io.twere.plainpure.mvp.model.dribbble.Comment;
-import io.twere.plainpure.mvp.model.dribbble.Like;
-import io.twere.plainpure.mvp.model.dribbble.Project;
-import io.twere.plainpure.mvp.model.dribbble.Rebound;
-import io.twere.plainpure.mvp.model.dribbble.Shot;
+import io.twere.plainpure.data.model.dribbble.Attachment;
+import io.twere.plainpure.data.model.dribbble.Bucket;
+import io.twere.plainpure.data.model.dribbble.Comment;
+import io.twere.plainpure.data.model.dribbble.Like;
+import io.twere.plainpure.data.model.dribbble.Project;
+import io.twere.plainpure.data.model.dribbble.Rebound;
+import io.twere.plainpure.data.model.dribbble.Shot;
 import java.util.List;
 import java.util.Map;
 import okhttp3.RequestBody;

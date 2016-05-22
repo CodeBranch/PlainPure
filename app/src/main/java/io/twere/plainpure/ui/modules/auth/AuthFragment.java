@@ -1,7 +1,7 @@
 package io.twere.plainpure.ui.modules.auth;
 
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
-import io.twere.plainpure.common.view.viewstate.BaseViewStateFragment;
+import io.twere.plainpure.base.view.viewstate.BaseViewStateFragment;
 
 public class AuthFragment extends BaseViewStateFragment<AuthView, AuthPresenter>
     implements AuthView {

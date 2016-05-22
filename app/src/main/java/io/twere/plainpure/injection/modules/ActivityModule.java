@@ -9,7 +9,7 @@ import dagger.Provides;
 import io.twere.plainpure.injection.qualifier.ActivityContext;
 import io.twere.plainpure.injection.scopes.PerActivity;
 
-@Module public class ActivityModule {
+@Module public final class ActivityModule {
 
   private final AppCompatActivity mActivity;
 

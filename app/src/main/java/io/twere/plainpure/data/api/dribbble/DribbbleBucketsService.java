@@ -1,7 +1,7 @@
 package io.twere.plainpure.data.api.dribbble;
 
-import io.twere.plainpure.mvp.model.dribbble.Bucket;
-import io.twere.plainpure.mvp.model.dribbble.Shot;
+import io.twere.plainpure.data.model.dribbble.Bucket;
+import io.twere.plainpure.data.model.dribbble.Shot;
 import java.util.List;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;

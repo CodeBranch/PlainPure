@@ -19,7 +19,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import rx.schedulers.Schedulers;
 
-@Module public class ApiModule {
+@Module public final class ApiModule {
 
   @Provides @PerActivity static OkHttpClient provideOkHttpClient() {
     return new OkHttpClient();

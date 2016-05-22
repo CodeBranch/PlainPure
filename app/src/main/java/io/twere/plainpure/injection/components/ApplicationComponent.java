@@ -3,7 +3,7 @@ package io.twere.plainpure.injection.components;
 import android.content.Context;
 import dagger.Component;
 import io.realm.Realm;
-import io.twere.plainpure.common.view.BaseActivity;
+import io.twere.plainpure.base.view.BaseActivity;
 import io.twere.plainpure.injection.modules.ApiModule;
 import io.twere.plainpure.injection.modules.ApplicationModule;
 import io.twere.plainpure.injection.qualifier.ApplicationContext;

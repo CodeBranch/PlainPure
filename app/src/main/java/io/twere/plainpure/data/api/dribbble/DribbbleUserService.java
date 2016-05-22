@@ -1,13 +1,13 @@
 package io.twere.plainpure.data.api.dribbble;
 
-import io.twere.plainpure.mvp.model.dribbble.Bucket;
-import io.twere.plainpure.mvp.model.dribbble.Followee;
-import io.twere.plainpure.mvp.model.dribbble.Follower;
-import io.twere.plainpure.mvp.model.dribbble.Like;
-import io.twere.plainpure.mvp.model.dribbble.Project;
-import io.twere.plainpure.mvp.model.dribbble.Shot;
-import io.twere.plainpure.mvp.model.dribbble.Team;
-import io.twere.plainpure.mvp.model.dribbble.User;
+import io.twere.plainpure.data.model.dribbble.Bucket;
+import io.twere.plainpure.data.model.dribbble.Followee;
+import io.twere.plainpure.data.model.dribbble.Follower;
+import io.twere.plainpure.data.model.dribbble.Like;
+import io.twere.plainpure.data.model.dribbble.Project;
+import io.twere.plainpure.data.model.dribbble.Shot;
+import io.twere.plainpure.data.model.dribbble.Team;
+import io.twere.plainpure.data.model.dribbble.User;
 import java.util.List;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
