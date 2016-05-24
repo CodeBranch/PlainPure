@@ -11,4 +11,8 @@
   <color name="text_primary_light">#ffffffff</color>
   <color name="dribbble">#fff06292</color>
   <color name="content_placeholder">#ffe0e0e0</color>
+  <color name="scrim">#99323232</color>
+  <color name="dribbble_super_dark">#ff33292d</color>
+  <color name="ripple_light">#99ffffff</color>
+  <color name="light_icon">#ffffffff</color>
 </resources>

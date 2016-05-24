@@ -59,18 +59,26 @@
               android:orientation="vertical"
               >
 
-            <ImageView
+
+            <io.twere.plainpure.ui.widget.CircularImageView
                 android:id="@+id/ivUserProfilePhoto"
                 android:layout_width="@dimen/user_profile_avatar_size"
                 android:layout_height="@dimen/user_profile_avatar_size"
-                android:layout_marginRight="16dp"
+                android:layout_rowSpan="2"
+                android:foreground="@drawable/avatar_ripple"
+                android:padding="@dimen/avatar_padding"
+                android:src="@drawable/avatar_placeholder"
+                android:stateListAnimator="@animator/raise"
+                android:textColorHighlight="@color/dribbble"
+                android:textColorLink="@color/dribbble_links"
                 />
 
             <LinearLayout
                 android:id="@+id/llUserDetails"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:orientation="vertical"
                 >
 
@@ -78,35 +86,39 @@
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:text="John Smith"
+                  android:textAlignment="center"
                   android:textColor="#ffffff"
                   android:textSize="24sp"
+                  android:textStyle="bold"
                   />
 
               <TextView
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:text="\@jsmith"
-                  android:textColor="#bbbbbb"
-                  android:textSize="12sp"
-                  />
 
-              <TextView
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
-                  android:text="Mobile development passionate."
+                  android:text="Mobile developer"
+                  android:textAlignment="center"
                   android:textColor="#ffffff"
                   android:textSize="12sp"
                   />
+
 
               <Button
+                  android:theme="@style/LightRippleOverlay"
                   android:id="@+id/btnFollow"
+                  android:drawableStart="@drawable/ic_follow"
                   android:layout_width="match_parent"
-                  android:layout_height="24dp"
-                  android:layout_marginRight="24dp"
-                  android:layout_marginTop="8dp"
-                  android:text="following"
-                  android:textColor="#ffffff"
-                  android:textSize="12sp"
+                  android:layout_height="wrap_content"
+                  android:drawablePadding="@dimen/spacing_normal"
+                  android:layout_gravity="center_horizontal"
+                  android:layout_marginBottom="@dimen/spacing_micro"
+                  android:paddingBottom="@dimen/spacing_normal"
+                  android:paddingEnd="@dimen/padding_normal"
+                  android:paddingStart="@dimen/padding_normal"
+                  android:padding="@dimen/padding_normal"
+                  android:text="Follow"
+                  android:textAppearance="@style/TextAppearance.DarkButton"
+                  style="@style/Widget.AppCompat.Button.Colored"
                   />
 
             </LinearLayout>
@@ -134,9 +146,10 @@
               <TextView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="1167"
+                  android:text="886"
                   android:textColor="#ffffff"
                   android:textSize="20sp"
+                  android:textStyle="bold"
                   />
 
               <TextView
@@ -160,9 +173,10 @@
               <TextView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="396"
+                  android:text="116"
                   android:textColor="#ffffff"
                   android:textSize="20sp"
+                  android:textStyle="bold"
                   />
 
               <TextView
@@ -185,9 +199,10 @@
               <TextView
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:text="485"
+                  android:text="5121"
                   android:textColor="#ffffff"
                   android:textSize="20sp"
+                  android:textStyle="bold"
                   />
 
               <TextView
