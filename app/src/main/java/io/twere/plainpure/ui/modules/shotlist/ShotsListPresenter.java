@@ -5,12 +5,12 @@ import io.twere.plainpure.data.model.dribbble.Shot;
 import java.util.List;
 import javax.inject.Inject;
 
-public class ShotListPresenter extends BaseRxLcePresenter<ShotListView, List<Shot>> {
+public class ShotsListPresenter extends BaseRxLcePresenter<ShotsListView, List<Shot>> {
 
-  @Inject public ShotListPresenter() {
+  @Inject public ShotsListPresenter() {
   }
 
-  @Override public void attachView(ShotListView view) {
+  @Override public void attachView(ShotsListView view) {
     super.attachView(view);
   }
 
@@ -18,5 +18,7 @@ public class ShotListPresenter extends BaseRxLcePresenter<ShotListView, List<Sho
     super.detachView(retainInstance);
   }
 
-
+  @Override protected void onNext(List<Shot> data) {
+    super.onNext(data);
+  }
 }

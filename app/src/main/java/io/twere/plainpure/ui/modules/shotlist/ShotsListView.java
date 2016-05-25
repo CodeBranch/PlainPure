@@ -4,7 +4,7 @@ import com.hannesdorfmann.mosby.mvp.lce.MvpLceView;
 import io.twere.plainpure.data.model.dribbble.Shot;
 import java.util.List;
 
-public interface ShotListView extends MvpLceView<List<Shot>> {
+public interface ShotsListView extends MvpLceView<List<Shot>> {
   void showShotListForm();
 
   void showError();

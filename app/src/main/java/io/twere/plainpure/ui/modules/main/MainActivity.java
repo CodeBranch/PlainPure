@@ -14,7 +14,7 @@ import io.twere.plainpure.injection.components.DaggerActivityComponent;
 import io.twere.plainpure.injection.modules.ActivityModule;
 import io.twere.plainpure.injection.modules.ApiModule;
 import io.twere.plainpure.ui.modules.profile.ProfileFragment;
-import io.twere.plainpure.ui.modules.shotlist.ShotListFragment;
+import io.twere.plainpure.ui.modules.shotlist.ShotsListFragment;
 
 public class MainActivity extends NavigationDrawerActivity
     implements HasComponent<ActivityComponent> {
@@ -28,7 +28,7 @@ public class MainActivity extends NavigationDrawerActivity
 
     FragmentManager fm = getSupportFragmentManager();
     FragmentTransaction ft = fm.beginTransaction();
-    ft.replace(R.id.content, ShotListFragment.newInstance());
+    ft.replace(R.id.content, ShotsListFragment.newInstance());
     ft.commit();
   }
 
@@ -44,12 +44,12 @@ public class MainActivity extends NavigationDrawerActivity
     if (menuItem.getItemId() == R.id.nav_shots) {
       FragmentManager fm = getSupportFragmentManager();
       FragmentTransaction ft = fm.beginTransaction();
-      ft.replace(R.id.content, ShotListFragment.newInstance());
+      ft.replace(R.id.content, ShotsListFragment.newInstance());
       ft.commit();
     } else if (menuItem.getItemId() == R.id.nav_designers) {
       FragmentManager fm = getSupportFragmentManager();
       FragmentTransaction ft = fm.beginTransaction();
-      ft.replace(R.id.content, ShotListFragment.newInstance());
+      ft.replace(R.id.content, ShotsListFragment.newInstance());
       ft.commit();
     }
   }
