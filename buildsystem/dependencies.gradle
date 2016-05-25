@@ -14,7 +14,7 @@ ext {
   //Libraries//
 
   //Kotlin
-  kotlinVersion = '1.0.1'
+  kotlinVersion = '1.0.2'
   kotterknifeVersion = '0.1.0-SNAPSHOT'
   ankoVersion = '0.8.3'
 

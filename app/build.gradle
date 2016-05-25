@@ -111,9 +111,9 @@ dependencies {
   //Cache
   compile app.glide
   //Services
-/*  compile(app.crashlytics) {
-    transitive = true;
-  }*/
+  /*  compile(app.crashlytics) {
+      transitive = true;
+    }*/
   //MVP
   compile app.mosby
   compile app.mosbyViewstate
