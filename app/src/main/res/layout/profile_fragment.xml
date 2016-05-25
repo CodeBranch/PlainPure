@@ -104,7 +104,6 @@
 
 
               <Button
-                  android:theme="@style/LightRippleOverlay"
                   android:id="@+id/btnFollow"
                   android:drawableStart="@drawable/ic_follow"
                   android:layout_width="match_parent"

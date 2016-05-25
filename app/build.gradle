@@ -29,6 +29,7 @@ android {
     versionName globalConfiguration.getAt("androidVersionName")
     testInstrumentationRunner globalConfiguration.getAt("testInstrumentationRunner")
     testApplicationId globalConfiguration.getAt("testApplicationId")
+    generatedDensities = []
 
     jackOptions {
       enabled false
