@@ -13,6 +13,12 @@ ext {
 
   //Libraries//
 
+  //Kotlin
+  kotlinVersion = '1.0.1'
+  kotterknifeVersion = '0.1.0-SNAPSHOT'
+  ankoVersion = '0.8.3'
+
+
   //Support
   supportVersion = '23.3.0'
   //Injection
@@ -22,6 +28,7 @@ ext {
   //Rx
   rxJavaVersion = '1.1.3'
   rxAndroidVersion = '1.1.0'
+  rxkotlinVersion = '0.30.1'
   //Network
   gsonVersion = '2.6.2'
   retrofitVersion = '2.0.2'
@@ -45,6 +52,8 @@ ext {
 
 
   appDependencies = [
+      //Kotlin
+      kotlin               : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
       //Support
       androidSupport       : "com.android.support:appcompat-v7:${supportVersion}",
       androidSupportV4     : "com.android.support:support-v4:${supportVersion}",
